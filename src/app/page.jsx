@@ -15,18 +15,19 @@ export default function HomePage() {
 
       {/* SANSKRIT TAGLINE */}
       <p className="hero-sanskrit">
-        अध्ययन विकासस्य मूलम्
+        अध्ययनं विकासस्य मूलम्
       </p>
 
-      {/* DESCRIPTION */}
+      {/* DESCRIPTION (MICRO-IMPROVED COPY) */}
       <p className="hero-desc">
-        A focused learning workspace built for clarity, control, and progress.
+        A focused learning workspace designed for clarity, control, and steady progress.
       </p>
 
-      {/* CTA BUTTONS */}
+      {/* CTA */}
       <div className="hero-actions">
-        <a href="/files" className="btn-primary">Explore Free Files</a>
-        <a href="/login" className="btn-secondary">Login / Signup</a>
+        <a href="/login" className="btn-primary">
+          Access Workspace
+        </a>
       </div>
 
       {/* FEATURE CARDS */}
@@ -49,7 +50,7 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer className="footer">
-        © 2026 PRstudy · Built with focus  
+        © 2026 PRstudy · Built with focus
         <br />
         <span className="admin-sign">— Praveen Rajput</span>
       </footer>

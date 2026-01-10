@@ -1,15 +1,16 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "PRstudy",
-  description: "A premium admin-controlled study workspace",
+  title: "PRstudy — Focused Learning Workspace",
+  description:
+    "PRstudy is a premium, admin-controlled learning workspace built for clarity, control, and steady progress.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* HEADER */}
+        {/* Header */}
         <header className="site-header">
           <div className="header-left">
             <img
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
           </div>
 
           <div className="header-right">
-            <a href="/login" className="login-btn">Login</a>
+            <a href="/login" className="login-btn">
+              Login
+            </a>
           </div>
         </header>
 

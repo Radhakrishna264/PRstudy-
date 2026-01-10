@@ -1,8 +1,9 @@
-import './globals.css';
+
+import "./globals.css";
 
 export const metadata = {
-  title: 'PRstudy',
-  description: 'INDIA YAAD RAKHE',
+  title: "PRstudy",
+  description: "A premium admin-controlled study workspace",
 };
 
 export default function RootLayout({ children }) {

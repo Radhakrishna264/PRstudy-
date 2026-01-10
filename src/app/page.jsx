@@ -3,33 +3,31 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="home-wrapper">
-      {/* Top Bar */}
-      <header className="top-bar">
-        <div className="logo-left">
+    <main className="home-root">
+      {/* Top bar */}
+      <header className="home-top">
+        <div className="brand">
           <Image
             src="/prstudy-logo.png"
-            alt="PRstudy Logo"
-            width={34}
-            height={34}
+            alt="PRstudy"
+            width={28}
+            height={28}
             priority
           />
-          <span className="brand-text">PRstudy</span>
+          <span className="brand-name">PRstudy</span>
+          <span className="badge">Admin Controlled</span>
         </div>
-
-        <Link href="/login" className="login-btn">
-          Login
-        </Link>
+        <Link href="/login" className="login-link">Login</Link>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero">
+      {/* Hero */}
+      <section className="hero enter">
         <div className="hero-logo">
           <Image
             src="/prstudy-logo.png"
-            alt="PRstudy Logo"
-            width={96}
-            height={96}
+            alt="PRstudy"
+            width={88}
+            height={88}
             priority
           />
         </div>
@@ -38,25 +36,43 @@ export default function Home() {
         <p className="hero-sanskrit">अध्ययनं विकासस्य मूलम्</p>
 
         <p className="hero-desc">
-          A premium, admin-controlled study workspace for files, practice,
-          tests, and focused learning.
+          A focused, admin-controlled study workspace for serious learners.
         </p>
 
-        <div className="hero-actions">
-          <Link href="/files" className="btn primary">
-            Explore Free Files
-          </Link>
-          <Link href="/login" className="btn secondary">
-            Login / Signup
-          </Link>
-        </div>
-
-        <footer className="hero-footer">
-          © 2026 PRstudy · Built for focus  
-          <br />
-          <span className="admin-sign">— Praveen Rajput</span>
-        </footer>
+        {/* Single CTA (locked) */}
+        <Link href="/login" className="cta-primary">
+          Login / Signup
+        </Link>
       </section>
+
+      {/* Feature cards (explain, not open) */}
+      <section className="features enter-delay">
+        <div className="card">
+          <h3>Free Files</h3>
+          <p>Limited access without login.</p>
+        </div>
+        <div className="card locked">
+          <h3>Tests & Analytics</h3>
+          <p>Login required.</p>
+        </div>
+        <div className="card locked">
+          <h3>Community & Rewards</h3>
+          <p>Unlock with account.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="home-footer">
+        <div className="links">
+          <Link href="/about">About</Link>
+          <Link href="/help">Help</Link>
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/terms">Terms</Link>
+        </div>
+        <div className="sign">
+          © 2026 PRstudy · <span>— Praveen Rajput</span>
+        </div>
+      </footer>
     </main>
   );
 }

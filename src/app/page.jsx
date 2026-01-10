@@ -1,114 +1,59 @@
-import Image from "next/image";
-import Link from "next/link";
-
-// Temporary flags (real auth Phase 4)
-const isLoggedIn = false;
-const isAdmin = false;
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="home-root">
-      {/* ===== Top Bar ===== */}
-      <header className="home-top">
-        <div className="brand">
-          <Image
-            src="/prstudy-logo.png"
-            alt="PRstudy"
-            width={28}
-            height={28}
-          />
-          <span className="brand-name">PRstudy</span>
-          {isAdmin && <span className="badge">Admin Controlled</span>}
+    <main className="hero-wrapper">
+
+      {/* HERO LOGO – CENTER */}
+      <div className="hero-logo">
+        <img
+          src="/prstudy-logo.png"
+          alt="PRstudy Logo"
+        />
+      </div>
+
+      {/* TITLE */}
+      <h1 className="hero-title">PRstudy</h1>
+
+      {/* SANSKRIT TAGLINE */}
+      <p className="hero-sanskrit">
+        अध्ययन विकासस्य मूलम्
+      </p>
+
+      {/* DESCRIPTION */}
+      <p className="hero-desc">
+        A focused learning workspace built for clarity, control, and progress.
+      </p>
+
+      {/* CTA BUTTONS */}
+      <div className="hero-actions">
+        <a href="/files" className="btn-primary">Explore Free Files</a>
+        <a href="/login" className="btn-secondary">Login / Signup</a>
+      </div>
+
+      {/* FEATURE CARDS */}
+      <div className="feature-row">
+        <div className="feature-card">
+          <h3>Free Files 🔓</h3>
+          <p>Access selected resources without signing in.</p>
         </div>
 
-        {isLoggedIn ? (
-          <div className="avatar">PR</div>
-        ) : (
-          <Link href="/login" className="login-link">
-            Login
-          </Link>
-        )}
-      </header>
-
-      {/* ===== Hero Section ===== */}
-      <section className="hero enter">
-        <div className="hero-logo">
-          <Image
-            src="/prstudy-logo.png"
-            alt="PRstudy"
-            width={88}
-            height={88}
-          />
+        <div className="feature-card">
+          <h3>Tests & Analytics 🔒</h3>
+          <p>Track performance with structured tests.</p>
         </div>
 
-        <h1 className="hero-title">PRstudy</h1>
-
-        <p className="hero-sanskrit">
-          अध्ययनं विकासस्य मूलम्
-        </p>
-
-        <p className="hero-desc">
-          A focused learning workspace built for clarity, control, and progress.
-        </p>
-
-        {isLoggedIn ? (
-          <button className="cta-primary">
-            Resume Learning
-          </button>
-        ) : (
-          <Link href="/login" className="cta-primary">
-            Access Workspace
-          </Link>
-        )}
-      </section>
-
-      {/* ===== Features Section ===== */}
-      <section className="features enter-delay">
-        <div className="card">
-          <h3>
-            Free Files <span className="lock">🔓</span>
-          </h3>
-          <p>
-            Access selected resources without signing in.
-          </p>
-          {isLoggedIn && <span className="hint">Open</span>}
+        <div className="feature-card">
+          <h3>Community & Rewards 🔒</h3>
+          <p>Learn together. Grow with recognition.</p>
         </div>
+      </div>
 
-        <div className="card locked">
-          <h3>
-            Tests & Analytics <span className="lock">🔒</span>
-          </h3>
-          <p>
-            Track performance with structured tests.
-          </p>
-          {isLoggedIn && <span className="hint">Open</span>}
-        </div>
-
-        <div className="card locked">
-          <h3>
-            Community & Rewards <span className="lock">🔒</span>
-          </h3>
-          <p>
-            Learn together. Grow with recognition.
-          </p>
-          {isLoggedIn && <span className="hint">Open</span>}
-        </div>
-      </section>
-
-      {/* ===== Footer ===== */}
-      <footer className="home-footer">
-        <div className="links">
-          <Link href="/about">About</Link>
-          <Link href="/help">Help</Link>
-          <Link href="/privacy">Privacy</Link>
-          <Link href="/terms">Terms</Link>
-        </div>
-
-        <div className="sign">
-          © 2026 PRstudy · Built with focus <br />
-          <span>— Praveen Rajput</span>
-        </div>
+      {/* FOOTER */}
+      <footer className="footer">
+        © 2026 PRstudy · Built with focus  
+        <br />
+        <span className="admin-sign">— Praveen Rajput</span>
       </footer>
+
     </main>
   );
 }

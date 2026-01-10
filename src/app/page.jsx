@@ -1,16 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const isLoggedIn = false; // later real auth
-const isAdmin = false;   // later role check
+// Temporary flags (real auth Phase 4)
+const isLoggedIn = false;
+const isAdmin = false;
 
 export default function Home() {
   return (
     <main className="home-root">
-      {/* Top bar */}
+      {/* ===== Top Bar ===== */}
       <header className="home-top">
         <div className="brand">
-          <Image src="/prstudy-logo.png" alt="PRstudy" width={28} height={28} />
+          <Image
+            src="/prstudy-logo.png"
+            alt="PRstudy"
+            width={28}
+            height={28}
+          />
           <span className="brand-name">PRstudy</span>
           {isAdmin && <span className="badge">Admin Controlled</span>}
         </div>
@@ -18,43 +24,53 @@ export default function Home() {
         {isLoggedIn ? (
           <div className="avatar">PR</div>
         ) : (
-          <Link href="/login" className="login-link">Login</Link>
+          <Link href="/login" className="login-link">
+            Login
+          </Link>
         )}
       </header>
 
-      {/* Hero */}
+      {/* ===== Hero Section ===== */}
       <section className="hero enter">
-        <Image
-          src="/prstudy-logo.png"
-          alt="PRstudy"
-          width={88}
-          height={88}
-          className="hero-logo"
-        />
+        <div className="hero-logo">
+          <Image
+            src="/prstudy-logo.png"
+            alt="PRstudy"
+            width={88}
+            height={88}
+          />
+        </div>
 
         <h1 className="hero-title">PRstudy</h1>
-        <p className="hero-sanskrit">अध्ययनं विकासस्य मूलम्</p>
+
+        <p className="hero-sanskrit">
+          अध्ययनं विकासस्य मूलम्
+        </p>
 
         <p className="hero-desc">
-          A focused, admin-controlled study workspace for serious learners.
+          A focused learning workspace built for clarity, control, and progress.
         </p>
 
         {isLoggedIn ? (
-          <button className="cta-primary">Continue Learning</button>
+          <button className="cta-primary">
+            Resume Learning
+          </button>
         ) : (
           <Link href="/login" className="cta-primary">
-            Login / Signup
+            Access Workspace
           </Link>
         )}
       </section>
 
-      {/* Features */}
+      {/* ===== Features Section ===== */}
       <section className="features enter-delay">
         <div className="card">
           <h3>
             Free Files <span className="lock">🔓</span>
           </h3>
-          <p>Limited access without login.</p>
+          <p>
+            Access selected resources without signing in.
+          </p>
           {isLoggedIn && <span className="hint">Open</span>}
         </div>
 
@@ -62,7 +78,9 @@ export default function Home() {
           <h3>
             Tests & Analytics <span className="lock">🔒</span>
           </h3>
-          <p>Login required.</p>
+          <p>
+            Track performance with structured tests.
+          </p>
           {isLoggedIn && <span className="hint">Open</span>}
         </div>
 
@@ -70,12 +88,14 @@ export default function Home() {
           <h3>
             Community & Rewards <span className="lock">🔒</span>
           </h3>
-          <p>Unlock with account.</p>
+          <p>
+            Learn together. Grow with recognition.
+          </p>
           {isLoggedIn && <span className="hint">Open</span>}
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ===== Footer ===== */}
       <footer className="home-footer">
         <div className="links">
           <Link href="/about">About</Link>
@@ -83,8 +103,10 @@ export default function Home() {
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
         </div>
+
         <div className="sign">
-          © 2026 PRstudy · <span>— Praveen Rajput</span>
+          © 2026 PRstudy · Built with focus <br />
+          <span>— Praveen Rajput</span>
         </div>
       </footer>
     </main>

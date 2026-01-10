@@ -1,91 +1,169 @@
-'use client';
-
-import Link from "next/link";
-
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen bg-[#04050c] text-white overflow-hidden">
-
-      {/* ================= HEADER ================= */}
-      <header className="flex items-center justify-between px-5 py-4">
-        {/* Logo only */}
+    <main
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* HEADER */}
+      <header
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "16px 20px",
+        }}
+      >
         <img
-          src="/logo-prstudy-final.png"
+          src="/logo-prstudy-final-v2.png"
           alt="PRstudy Logo"
-          className="h-9 w-9"
+          style={{
+            width: 38,
+            height: 38,
+            borderRadius: 10,
+            boxShadow: "0 0 18px rgba(168,85,247,0.6)",
+          }}
         />
 
-        <div className="flex items-center gap-4 text-sm">
-          <Link href="/login" className="opacity-80 hover:opacity-100">
-            Login
-          </Link>
-          <span className="text-xl cursor-pointer opacity-80">⋮</span>
-        </div>
+        <a
+          href="/login"
+          style={{
+            fontSize: 14,
+            color: "#c7d2fe",
+            opacity: 0.9,
+          }}
+        >
+          Login
+        </a>
       </header>
 
-      {/* ================= HERO ================= */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-24 pb-32">
-
-        {/* Neon Background Glow */}
-        <div className="absolute inset-0 -z-10 flex items-center justify-center">
-          <div className="w-[560px] h-[560px] rounded-full
-            bg-gradient-to-br from-purple-600/35 via-blue-500/25 to-transparent
-            blur-[160px]" />
-        </div>
-
-        {/* Logo */}
+      {/* HERO */}
+      <section
+        className="fade-in"
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: "0 18px",
+        }}
+      >
+        {/* LOGO CENTER */}
         <img
-          src="/logo-prstudy-final.png"
+          src="/logo-prstudy-final-v2.png"
           alt="PRstudy Logo"
-          className="h-20 w-20 mb-6"
+          style={{
+            width: 72,
+            height: 72,
+            borderRadius: 18,
+            boxShadow: "0 0 32px rgba(59,130,246,0.55)",
+            marginBottom: 18,
+          }}
         />
 
-        {/* Brand Name */}
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-wide
-          bg-gradient-to-r from-purple-400 to-blue-400
-          bg-clip-text text-transparent">
+        {/* BRAND */}
+        <h1
+          style={{
+            fontSize: 34,
+            fontWeight: 700,
+            background:
+              "linear-gradient(90deg,#a855f7,#38bdf8,#22d3ee)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            marginBottom: 6,
+          }}
+        >
           PRstudy
         </h1>
 
-        {/* Sanskrit Slogan */}
-        <p className="mt-3 text-lg tracking-wide text-[#B9A7FF]">
+        {/* SANSKRIT TAGLINE */}
+        <div
+          style={{
+            fontSize: 14,
+            letterSpacing: "0.06em",
+            color: "#94a3b8",
+            marginBottom: 14,
+          }}
+        >
           अध्ययनं विकासस्य मूलम्
+        </div>
+
+        {/* DESCRIPTION */}
+        <p
+          style={{
+            maxWidth: 420,
+            fontSize: 14,
+            lineHeight: 1.6,
+            color: "#9ca3af",
+            marginBottom: 26,
+          }}
+        >
+          A premium, admin-controlled study workspace for files, practice,
+          tests, and focused learning.
         </p>
 
-        {/* Description */}
-        <p className="mt-6 max-w-xl text-gray-400 text-sm sm:text-base">
-          A premium, admin-controlled study workspace for files,
-          practice, and focused learning.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="mt-10 flex gap-4">
-          <Link
+        {/* CTA */}
+        <div
+          style={{
+            display: "flex",
+            gap: 12,
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <a
             href="/files"
-            className="px-6 py-3 rounded-lg bg-indigo-600
-            hover:bg-indigo-500 transition shadow-md">
+            style={{
+              padding: "10px 18px",
+              borderRadius: 10,
+              background:
+                "linear-gradient(90deg,#6366f1,#8b5cf6)",
+              color: "#fff",
+              fontSize: 14,
+              boxShadow: "0 0 22px rgba(99,102,241,0.5)",
+            }}
+          >
             Explore Free Files
-          </Link>
+          </a>
 
-          <Link
+          <a
             href="/login"
-            className="px-6 py-3 rounded-lg border border-white/20
-            hover:bg-white/5 transition">
+            style={{
+              padding: "10px 18px",
+              borderRadius: 10,
+              border: "1px solid #334155",
+              color: "#e5e7eb",
+              fontSize: 14,
+            }}
+          >
             Login / Signup
-          </Link>
+          </a>
+        </div>
+
+        {/* FOOTER SIGNATURE */}
+        <div
+          style={{
+            marginTop: 42,
+            fontSize: 12,
+            color: "#64748b",
+          }}
+        >
+          © 2026 PRstudy · Built for focus
+          <br />
+          <span
+            style={{
+              fontStyle: "italic",
+              color: "#a78bfa",
+            }}
+          >
+            — Praveen Rajput
+          </span>
         </div>
       </section>
-
-      {/* ================= FOOTER ================= */}
-      <footer className="px-6 py-6 text-center text-xs text-gray-500">
-        <p>© {new Date().getFullYear()} PRstudy · Built for focus</p>
-
-        {/* Admin Signature */}
-        <p className="mt-2 text-sm text-purple-400 opacity-80 italic">
-          — Praveen Rajput
-        </p>
-      </footer>
-
     </main>
   );
 }

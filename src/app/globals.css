@@ -1,218 +1,157 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
 
-/* =========================
-   GLOBAL BASE STYLES
-========================= */
 body {
-  background: radial-gradient(1200px 600px at top, #0c1024, #05060f);
-  color: #e8eaff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Ubuntu, sans-serif;
+  background: radial-gradient(circle at top, #0b1020, #05070f);
+  color: #dbeafe;
 }
 
-/* =========================
-   LAYOUT
-========================= */
-.home-root {
-  min-height: 100vh;
-}
+/* ================= HEADER ================= */
 
-.home-top {
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 18px;
+  padding: 14px 22px;
+  background: linear-gradient(180deg, rgba(10,15,30,0.9), transparent);
 }
 
-.brand {
+.header-left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.brand-name {
+.header-logo {
+  width: 26px;
+  height: 26px;
+  opacity: 0.9;
+}
+
+.header-title {
   font-weight: 600;
-  letter-spacing: 0.3px;
+  font-size: 15px;
 }
 
-.badge {
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(130, 120, 255, 0.35);
-  color: #cfd2ff;
+.login-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #6366f1;
+  color: #c7d2fe;
+  text-decoration: none;
+  font-size: 13px;
 }
 
-.login-link {
-  font-size: 14px;
-  color: #cfd2ff;
-}
+/* ================= HERO ================= */
 
-/* =========================
-   HERO SECTION
-========================= */
-.hero {
+.hero-wrapper {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 72px 20px 40px;
+}
+
+/* CENTER LOGO */
+.hero-logo {
+  margin-bottom: 14px;
 }
 
 .hero-logo img {
+  width: 84px;
+  height: 84px;
   border-radius: 18px;
-  box-shadow: 0 0 28px rgba(120, 110, 255, 0.55);
+  box-shadow:
+    0 0 18px rgba(139,92,246,0.6),
+    0 0 32px rgba(56,189,248,0.4);
 }
 
+/* TITLE */
 .hero-title {
-  margin-top: 14px;
-  font-size: 36px;
-  background: linear-gradient(90deg, #c58cff, #63d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-sanskrit {
+  font-size: 30px;
+  font-weight: 700;
   margin-top: 6px;
-  font-size: 14px;
-  color: #c7c9ff;
 }
 
-.hero-desc {
-  max-width: 520px;
-  margin: 16px auto;
-  color: #b9bcff;
-  letter-spacing: 0.2px;
-}
-
-/* =========================
-   CTA
-========================= */
-.cta-primary {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-weight: 500;
-  background: linear-gradient(90deg, #7b6cff, #5ad7ff);
-  color: #02030a;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.cta-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(90, 110, 255, 0.35);
-}
-
-/* =========================
-   FEATURES
-========================= */
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  padding: 10px 18px 36px;
-}
-
-@media (max-width: 720px) {
-  .features {
-    grid-template-columns: 1fr;
-  }
-}
-
-.card {
-  border-radius: 16px;
-  padding: 16px;
-  background: rgba(10, 14, 36, 0.55);
-  border: 1px solid rgba(120, 120, 255, 0.18);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 26px rgba(120, 110, 255, 0.35);
-}
-
-.card.locked {
+/* SANSKRIT */
+.hero-sanskrit {
+  font-size: 13px;
   opacity: 0.85;
+  margin-top: 4px;
 }
 
-.card h3 {
-  letter-spacing: 0.3px;
+/* DESC */
+.hero-desc {
+  font-size: 14px;
+  max-width: 420px;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
-.card p {
-  line-height: 1.45;
+/* ACTIONS */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
 }
 
-.hint {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 11px;
-  color: #b8bbff;
+.btn-primary {
+  padding: 10px 22px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.lock {
+.btn-secondary {
+  padding: 10px 22px;
+  border-radius: 24px;
+  border: 1px solid #6366f1;
+  color: #c7d2fe;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* FEATURES */
+.feature-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  width: 220px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.feature-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.feature-card p {
   font-size: 12px;
   opacity: 0.8;
 }
 
-/* =========================
-   AVATAR
-========================= */
-.avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7b6cff, #5ad7ff);
-  color: #02030a;
+/* FOOTER */
+.footer {
+  margin-top: 50px;
   font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+  opacity: 0.6;
 }
 
-/* =========================
-   FOOTER
-========================= */
-.home-footer {
-  padding: 18px;
-  border-top: 1px solid rgba(120, 120, 255, 0.12);
-  background: rgba(6, 8, 22, 0.6);
-}
-
-.home-footer .links {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  font-size: 13px;
-}
-
-.home-footer .sign {
-  margin-top: 8px;
-  font-size: 12px;
-  color: #a7abff;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-.enter {
-  animation: fadeUp 0.6s ease-out both;
-}
-
-.enter-delay {
-  animation: fadeUp 0.7s ease-out both;
-  animation-delay: 0.12s;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.admin-sign {
+  font-style: italic;
 }

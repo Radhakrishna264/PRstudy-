@@ -1,77 +1,87 @@
+"use client";
+
 export default function HomePage() {
   return (
     <main
       style={{
         minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top, #0f1b3d 0%, #05070f 55%, #03050a 100%)",
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        color: "#ffffff",
+        fontFamily: "Inter, system-ui, sans-serif",
       }}
     >
       {/* HEADER */}
       <header
         style={{
+          width: "100%",
+          padding: "16px 20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "16px 20px",
+          backdropFilter: "blur(10px)",
         }}
       >
         <img
-          src="/logo-prstudy-final-v2.png"
+          src="/prstudy-logo-2026.png"
           alt="PRstudy Logo"
           style={{
-            width: 38,
-            height: 38,
+            width: 36,
+            height: 36,
             borderRadius: 10,
-            boxShadow: "0 0 18px rgba(168,85,247,0.6)",
+            boxShadow: "0 0 18px rgba(168,85,247,0.55)",
           }}
         />
 
-        <a
-          href="/login"
+        <button
           style={{
-            fontSize: 14,
+            background: "transparent",
             color: "#c7d2fe",
-            opacity: 0.9,
+            border: "1px solid rgba(99,102,241,0.35)",
+            padding: "6px 14px",
+            borderRadius: 999,
+            cursor: "pointer",
           }}
         >
           Login
-        </a>
+        </button>
       </header>
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section
-        className="fade-in"
         style={{
-          flex: 1,
+          flexGrow: 1,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          padding: "0 18px",
+          padding: "0 20px",
         }}
       >
-        {/* LOGO CENTER */}
         <img
-          src="/logo-prstudy-final-v2.png"
-          alt="PRstudy Logo"
+          src="/prstudy-logo-2026.png"
+          alt="PRstudy Main Logo"
           style={{
-            width: 72,
-            height: 72,
-            borderRadius: 18,
-            boxShadow: "0 0 32px rgba(59,130,246,0.55)",
+            width: 88,
+            height: 88,
+            borderRadius: 20,
             marginBottom: 18,
+            boxShadow:
+              "0 0 45px rgba(168,85,247,0.55), 0 0 80px rgba(59,130,246,0.25)",
           }}
         />
 
-        {/* BRAND */}
         <h1
           style={{
-            fontSize: 34,
+            fontSize: 28,
             fontWeight: 700,
             background:
-              "linear-gradient(90deg,#a855f7,#38bdf8,#22d3ee)",
+              "linear-gradient(90deg, #a855f7, #38bdf8, #22d3ee)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             marginBottom: 6,
@@ -80,90 +90,82 @@ export default function HomePage() {
           PRstudy
         </h1>
 
-        {/* SANSKRIT TAGLINE */}
-        <div
+        <p
           style={{
             fontSize: 14,
-            letterSpacing: "0.06em",
-            color: "#94a3b8",
-            marginBottom: 14,
+            color: "#a5b4fc",
+            marginBottom: 10,
           }}
         >
           अध्ययनं विकासस्य मूलम्
-        </div>
+        </p>
 
-        {/* DESCRIPTION */}
         <p
           style={{
             maxWidth: 420,
             fontSize: 14,
+            color: "#cbd5f5",
             lineHeight: 1.6,
-            color: "#9ca3af",
-            marginBottom: 26,
+            marginBottom: 24,
           }}
         >
           A premium, admin-controlled study workspace for files, practice,
           tests, and focused learning.
         </p>
 
-        {/* CTA */}
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
-          <a
-            href="/files"
+        <div style={{ display: "flex", gap: 12 }}>
+          <button
             style={{
-              padding: "10px 18px",
-              borderRadius: 10,
               background:
-                "linear-gradient(90deg,#6366f1,#8b5cf6)",
+                "linear-gradient(90deg, #6366f1, #8b5cf6)",
+              border: "none",
               color: "#fff",
-              fontSize: 14,
-              boxShadow: "0 0 22px rgba(99,102,241,0.5)",
+              padding: "10px 18px",
+              borderRadius: 999,
+              fontWeight: 500,
+              cursor: "pointer",
+              boxShadow: "0 0 25px rgba(99,102,241,0.45)",
             }}
           >
             Explore Free Files
-          </a>
+          </button>
 
-          <a
-            href="/login"
+          <button
             style={{
+              background: "transparent",
+              border: "1px solid rgba(99,102,241,0.45)",
+              color: "#c7d2fe",
               padding: "10px 18px",
-              borderRadius: 10,
-              border: "1px solid #334155",
-              color: "#e5e7eb",
-              fontSize: 14,
+              borderRadius: 999,
+              cursor: "pointer",
             }}
           >
             Login / Signup
-          </a>
-        </div>
-
-        {/* FOOTER SIGNATURE */}
-        <div
-          style={{
-            marginTop: 42,
-            fontSize: 12,
-            color: "#64748b",
-          }}
-        >
-          © 2026 PRstudy · Built for focus
-          <br />
-          <span
-            style={{
-              fontStyle: "italic",
-              color: "#a78bfa",
-            }}
-          >
-            — Praveen Rajput
-          </span>
+          </button>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer
+        style={{
+          padding: "14px 10px",
+          textAlign: "center",
+          fontSize: 12,
+          color: "#94a3b8",
+        }}
+      >
+        © 2026 PRstudy · Built for focus
+        <div
+          style={{
+            marginTop: 4,
+            fontStyle: "italic",
+            color: "#a78bfa",
+            opacity: 0.8,
+          }}
+        >
+          — Praveen Rajput
+        </div>
+      </footer>
     </main>
   );
 }

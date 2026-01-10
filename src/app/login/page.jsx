@@ -7,6 +7,7 @@ export default function LoginPage() {
     <main className="min-h-screen flex items-center justify-center bg-black px-4 text-white">
       <div className="w-full max-w-sm bg-[#0b0f1a] border border-purple-500/20 rounded-2xl p-6 shadow-xl">
         
+        {/* Heading */}
         <h1 className="text-2xl font-semibold text-center text-purple-400">
           Login to PRstudy
         </h1>
@@ -15,6 +16,7 @@ export default function LoginPage() {
           Email / Mobile / PR ID
         </p>
 
+        {/* Login Form */}
         <form className="mt-6 space-y-4">
           <input
             type="text"
@@ -36,15 +38,17 @@ export default function LoginPage() {
           </button>
         </form>
 
+        {/* Action Links */}
         <div className="flex justify-between mt-4 text-xs text-gray-400">
-          <button className="hover:text-purple-400">
-            Use OTP instead
-          </button>
-          <button className="hover:text-purple-400">
+          <Link href="/forgot-password" className="hover:text-purple-400">
             Forgot password?
-          </button>
+          </Link>
+          <Link href="/search-account" className="hover:text-purple-400">
+            Search account
+          </Link>
         </div>
 
+        {/* Signup */}
         <p className="mt-6 text-center text-xs text-gray-400">
           Don’t have an account?{" "}
           <Link href="/signup" className="text-purple-400 hover:underline">

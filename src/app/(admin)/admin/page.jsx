@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function AdminPage() {
   return (
     <div className="min-h-screen bg-[#0b0f1a] text-white p-6">

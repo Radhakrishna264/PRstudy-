@@ -1,24 +1,31 @@
 export default function DashboardPage() {
   return (
-    <section className="dashboard">
+    <section className="space-y-6">
 
-      <h1 className="dash-title">Dashboard Overview</h1>
+      <div>
+        <h1 className="text-2xl font-semibold">
+          Welcome to PRstudy
+        </h1>
+        <p className="mt-1 text-white/60">
+          Resume your learning from where you left off.
+        </p>
+      </div>
 
-      <div className="dash-cards">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        <div className="dash-card">
-          <h3>Quick Resume</h3>
-          <p>Continue from your last opened file or test.</p>
+        <div className="card">
+          <p className="text-sm opacity-60">Last Activity</p>
+          <p className="mt-2">No activity yet</p>
         </div>
 
-        <div className="dash-card">
-          <h3>System Status</h3>
-          <p>All systems are running normally.</p>
+        <div className="card">
+          <p className="text-sm opacity-60">Announcements</p>
+          <p className="mt-2">No announcements</p>
         </div>
 
-        <div className="dash-card locked">
-          <h3>Analytics</h3>
-          <p>Insights will appear after activity.</p>
+        <div className="card opacity-70">
+          <p className="text-sm opacity-60">Rewards</p>
+          <p className="mt-2">Unlock by completing tests</p>
         </div>
 
       </div>

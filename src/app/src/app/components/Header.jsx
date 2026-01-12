@@ -10,32 +10,25 @@ export default function Header() {
 
         {/* LOGO */}
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-purple-600 to-blue-500 p-[2px] shadow-lg shadow-purple-500/30">
-            <div className="h-full w-full rounded-xl bg-black flex items-center justify-center">
-              <Image
-                src="/logo.png"
-                alt="PR Logo"
-                width={24}
-                height={24}
-              />
-            </div>
-          </div>
-
+          <Image
+            src="/logo.png"
+            alt="PRstudy Logo"
+            width={28}
+            height={28}
+            priority
+          />
           <span className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             PRstudy
           </span>
         </div>
 
         {/* ACTIONS */}
-        <div className="flex items-center gap-3">
-          <Link
-            href="/login"
-            className="text-sm text-gray-300 hover:text-white transition"
-          >
-            Login
-          </Link>
-        </div>
-
+        <Link
+          href="/login"
+          className="text-sm text-gray-300 hover:text-white transition"
+        >
+          Login
+        </Link>
       </div>
     </header>
   );

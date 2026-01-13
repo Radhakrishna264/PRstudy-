@@ -1,57 +1,32 @@
+import Header from "../components/Header";
 import Watermark from "../components/Watermark";
 import { getSession } from "../../lib/session";
 
 export default async function AdminLayout({ children }) {
   const session = await getSession();
-
-  // ✅ SAFE ACCESS (NO RUNTIME CRASH)
   const role = session?.user?.role;
 
   return (
-    <section className="min-h-screen flex bg-black text-gray-200 relative">
-      {/* Watermark for Admin / SuperAdmin */}
-      <Watermark role={role} />
-
-      {/* Sidebar */}
-      <aside className="w-64 bg-black/60 border-r border-gray-800">
-        <div className="p-4 font-bold text-primary tracking-wide">
-          Admin Panel
-        </div>
-
-        <nav className="px-4 space-y-2 text-sm">
-          <a
-            href="/admin/admin-dashboard"
-            className="block hover:text-primary"
-          >
-            Dashboard
-          </a>
-
-          <a href="/admin/users" className="block hover:text-primary">
-            Users
-          </a>
-
-          <a href="/admin/files-control" className="block hover:text-primary">
-            Files Control
-          </a>
-
-          <a href="/admin/tests-control" className="block hover:text-primary">
-            Tests Control
-          </a>
-
-          <a href="/admin/payments" className="block hover:text-primary">
-            Payments
-          </a>
-
-          <a href="/admin/analytics" className="block hover:text-primary">
-            Analytics
-          </a>
-        </nav>
+    <div className="min-h-screen flex">
+      {/* Admin Sidebar */}
+      <aside className="w-64 border-r p-4">
+        <h2 className="font-semibold mb-4">Admin Panel</h2>
+        <ul className="space-y-2 text-sm opacity-80">
+          <li>Dashboard</li>
+          <li>Users</li>
+          <li>Files Control</li>
+          <li>Tests Control</li>
+          <li>Payments</li>
+          <li>Analytics</li>
+        </ul>
       </aside>
 
-      {/* Main Content */}
-      <main className="flex-1 p-6">
-        {children}
-      </main>
-    </section>
+      {/* Main */}
+      <div className="flex-1 relative">
+        <Header />
+        <Watermark role={role} />
+        <main className="p-6">{children}</main>
+      </div>
+    </div>
   );
 }

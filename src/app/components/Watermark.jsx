@@ -1,4 +1,4 @@
-import { BRANDING } from "@/config/branding";
+import { BRANDING } from "../../config/branding";
 
 export default function Watermark({ role }) {
   if (!role) return null;

@@ -1,10 +1,10 @@
-"use client";
-
-export default function UsersPage() {
+export default function AdminUsers() {
   return (
-    <div style={{ padding: "24px" }}>
-      <h1>Users</h1>
-      <p>Users management (admin)</p>
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Users</h1>
+      <p className="text-gray-400">
+        Manage users, roles, suspensions, and appeals.
+      </p>
     </div>
   );
 }

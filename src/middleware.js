@@ -1,13 +1,13 @@
 // src/middleware.js
 import { NextResponse } from "next/server";
-import { getSession } from "@/lib/session";
+import { getSession } from "./lib/session";
 
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
   const session = await getSession(request);
 
   // -----------------------------
-  // PUBLIC ROUTES (always allowed)
+  // PUBLIC ROUTES
   // -----------------------------
   if (
     pathname === "/" ||

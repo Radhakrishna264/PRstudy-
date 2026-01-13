@@ -1,26 +1,17 @@
-import { redirect } from "next/navigation";
-import { getSession } from "../../../lib/session";
+import Header from "../../components/Header";
 
-export default async function AdminDashboardPage() {
-  const session = await getSession();
-
-  if (!session?.user) {
-    redirect("/auth/login");
-  }
-
-  if (
-    session.user.role !== "ADMIN" &&
-    session.user.role !== "SUPERADMIN"
-  ) {
-    redirect("/dashboard");
-  }
-
+export default function AdminDashboardPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
-      <p className="text-gray-400">
-        System overview and administrative controls.
-      </p>
-    </div>
+    <main className="min-h-screen">
+      {/* Admin Header */}
+      <Header glow="soft" />
+
+      <section className="p-6">
+        <h1 className="text-2xl font-semibold mb-2">Admin Dashboard</h1>
+        <p className="opacity-70">
+          System overview and administrative controls.
+        </p>
+      </section>
+    </main>
   );
 }

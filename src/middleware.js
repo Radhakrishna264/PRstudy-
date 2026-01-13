@@ -6,9 +6,7 @@ export async function middleware(request) {
   const { pathname } = request.nextUrl;
   const session = await getSession(request);
 
-  // -----------------------------
-  // PUBLIC ROUTES
-  // -----------------------------
+  // PUBLIC ROUTES (always allowed)
   if (
     pathname === "/" ||
     pathname.startsWith("/auth") ||
@@ -19,32 +17,20 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // -----------------------------
-  // USER DASHBOARD
-  // -----------------------------
-  if (pathname.startsWith("/dashboard")) {
-    if (!session?.user) {
-      return NextResponse.redirect(new URL("/auth/login", request.url));
-    }
-    return NextResponse.next();
-  }
-
-  // -----------------------------
-  // ADMIN DASHBOARD
-  // -----------------------------
+  // ADMIN DASHBOARD PROTECTION ONLY
   if (pathname.startsWith("/admin-dashboard")) {
+    // not logged in → block
     if (!session?.user) {
-      return NextResponse.redirect(new URL("/auth/login", request.url));
+      return NextResponse.redirect(new URL("/", request.url));
     }
 
+    // logged in but not admin/superadmin → block
     if (
       session.user.role !== "ADMIN" &&
       session.user.role !== "SUPERADMIN"
     ) {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
-
-    return NextResponse.next();
   }
 
   return NextResponse.next();

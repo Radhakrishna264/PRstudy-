@@ -23,3 +23,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* === Brand Neon Helpers === */
+.neon-soft {
+  filter: drop-shadow(0 0 6px rgba(124,124,255,.35))
+          drop-shadow(0 0 12px rgba(0,229,255,.25));
+}
+.neon-hero {
+  filter: drop-shadow(0 0 10px rgba(124,124,255,.6))
+          drop-shadow(0 0 22px rgba(0,229,255,.45));
+}
+.brand-slogan {
+  letter-spacing: .02em;
+  opacity: .85;
+}

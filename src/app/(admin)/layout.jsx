@@ -1,21 +1,22 @@
-import Watermark from "@/app/components/Watermark";
-import { getSession } from "@/lib/session";
+import "../globals.css";
+import Watermark from "../components/Watermark";
+import { getSession } from "../../lib/session";
 
-export default function AdminLayout({ children }) {
-  const session = getSession();
-  const role = session?.user?.role;
+export default async function AdminLayout({ children }) {
+  const session = await getSession();
+  const role = session?.user?.role || "ADMIN";
 
   return (
     <section className="min-h-screen flex bg-black text-gray-200 relative">
       <Watermark role={role} />
 
-      <aside className="w-64 bg-black/60 border-r border-gray-800">
-        <div className="p-4 font-bold text-primary tracking-wide">
+      <aside className="w-64 bg-black/60 border-r border-gray-800 p-4">
+        <div className="font-bold text-primary tracking-widest mb-6">
           Admin Panel
         </div>
 
-        <nav className="px-4 space-y-2 text-sm">
-          <a href="/admin/dashboard" className="block hover:text-primary">
+        <nav className="space-y-2 text-sm">
+          <a href="/admin/admin-dashboard" className="block hover:text-primary">
             Dashboard
           </a>
           <a href="/admin/users" className="block hover:text-primary">
@@ -36,7 +37,7 @@ export default function AdminLayout({ children }) {
         </nav>
       </aside>
 
-      <main className="flex-1 p-6">
+      <main className="flex-1 p-6 relative z-10">
         {children}
       </main>
     </section>

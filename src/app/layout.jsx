@@ -1,16 +1,13 @@
 import "./globals.css";
-import Header from "@/components/Header";
-
-export const metadata = {
-  title: "PRstudy",
-  description: "Premium SaaS Learning Platform"
-};
+import Watermark from "./components/Watermark";
+import Header from "./components/Header";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <Header />
+        <Watermark role="PUBLIC" />
         {children}
       </body>
     </html>

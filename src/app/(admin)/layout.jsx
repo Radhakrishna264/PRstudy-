@@ -3,6 +3,8 @@ import { getSession } from "../../lib/session";
 
 export default async function AdminLayout({ children }) {
   const session = await getSession();
+
+  // ✅ SAFE ACCESS (NO RUNTIME CRASH)
   const role = session?.user?.role;
 
   return (
@@ -17,22 +19,45 @@ export default async function AdminLayout({ children }) {
         </div>
 
         <nav className="px-4 space-y-2 text-sm">
-          <a href="/admin/admin-dashboard" className="block hover:text-primary">
+          <a
+            href="/admin/admin-dashboard"
+            className="block hover:text-primary"
+          >
             Dashboard
           </a>
-          <a href="/admin/users" className="block hover:text-primary">
+
+          <a
+            href="/admin/users"
+            className="block hover:text-primary"
+          >
             Users
           </a>
-          <a href="/admin/files-control" className="block hover:text-primary">
+
+          <a
+            href="/admin/files-control"
+            className="block hover:text-primary"
+          >
             Files Control
           </a>
-          <a href="/admin/tests-control" className="block hover:text-primary">
+
+          <a
+            href="/admin/tests-control"
+            className="block hover:text-primary"
+          >
             Tests Control
           </a>
-          <a href="/admin/payments" className="block hover:text-primary">
+
+          <a
+            href="/admin/payments"
+            className="block hover:text-primary"
+          >
             Payments
           </a>
-          <a href="/admin/analytics" className="block hover:text-primary">
+
+          <a
+            href="/admin/analytics"
+            className="block hover:text-primary"
+          >
             Analytics
           </a>
         </nav>

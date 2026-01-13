@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Watermark from "../components/Watermark";
-import { getSession } from "../../lib/session";
+import { getSession } from "../../../lib/session";
 
 export default async function AdminLayout({ children }) {
   const session = await getSession();
@@ -21,7 +21,7 @@ export default async function AdminLayout({ children }) {
         </ul>
       </aside>
 
-      {/* Main */}
+      {/* Main Area */}
       <div className="flex-1 relative">
         <Header />
         <Watermark role={role} />

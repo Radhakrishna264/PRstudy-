@@ -1,19 +1,17 @@
-import { redirect } from "next/navigation";
-import { getSession } from "../../../lib/session";
+import Header from "../../components/Header";
 
-export default async function DashboardPage() {
-  const session = await getSession();
-
-  if (!session?.user) {
-    redirect("/auth/login");
-  }
-
+export default function DashboardPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-      <p className="text-gray-400">
-        Overview of your activity, tests, rewards, and progress.
-      </p>
-    </div>
+    <main className="min-h-screen">
+      {/* User Header */}
+      <Header glow="soft" />
+
+      <section className="p-6">
+        <h1 className="text-2xl font-semibold mb-2">Dashboard</h1>
+        <p className="opacity-70">
+          Overview of your activity, tests, rewards, and progress.
+        </p>
+      </section>
+    </main>
   );
 }

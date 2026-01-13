@@ -1,15 +1,9 @@
-export function getSession() {
-  /**
-   * TEMP AUTH LOGIC
-   * Phase-10 me real auth replace karega
-   */
-
+export async function getSession() {
+  // Phase-9 bootstrap session (temporary)
   return {
     user: {
-      id: "superadmin-seed",
-      role: "superadmin",
-      email: process.env.SUPERADMIN_EMAIL,
-      name: process.env.SUPERADMIN_NAME
-    }
+      role: "superadmin", // superadmin | admin | user
+      name: "Praveen Rajput",
+    },
   };
 }

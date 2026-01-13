@@ -1,20 +1,22 @@
+import Header from "../../components/Header";
+
 export default function SignupPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6">
-      <div className="w-full max-w-md bg-black/40 p-6 rounded-xl">
-        <h1 className="text-2xl font-bold mb-6">Sign Up</h1>
-        <input
-          placeholder="Name"
-          className="w-full mb-3 p-3 rounded bg-black/60 border border-gray-700"
-        />
-        <input
-          placeholder="Email / Mobile"
-          className="w-full mb-3 p-3 rounded bg-black/60 border border-gray-700"
-        />
-        <button className="w-full py-3 bg-primary text-black rounded font-semibold">
-          Create Account
-        </button>
-      </div>
+    <main className="min-h-screen flex flex-col">
+      <Header glow="soft" />
+
+      <section className="flex flex-1 items-center justify-center">
+        <div className="w-full max-w-md p-6">
+          <h1 className="text-2xl font-semibold mb-2">Create Account</h1>
+          <p className="text-sm opacity-70 mb-6">
+            भवत: लक्ष्यं भवत: जीवनम् अस्ति।
+          </p>
+
+          <div className="border rounded p-4 opacity-60">
+            Signup form placeholder
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

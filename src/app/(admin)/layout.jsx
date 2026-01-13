@@ -26,38 +26,23 @@ export default async function AdminLayout({ children }) {
             Dashboard
           </a>
 
-          <a
-            href="/admin/users"
-            className="block hover:text-primary"
-          >
+          <a href="/admin/users" className="block hover:text-primary">
             Users
           </a>
 
-          <a
-            href="/admin/files-control"
-            className="block hover:text-primary"
-          >
+          <a href="/admin/files-control" className="block hover:text-primary">
             Files Control
           </a>
 
-          <a
-            href="/admin/tests-control"
-            className="block hover:text-primary"
-          >
+          <a href="/admin/tests-control" className="block hover:text-primary">
             Tests Control
           </a>
 
-          <a
-            href="/admin/payments"
-            className="block hover:text-primary"
-          >
+          <a href="/admin/payments" className="block hover:text-primary">
             Payments
           </a>
 
-          <a
-            href="/admin/analytics"
-            className="block hover:text-primary"
-          >
+          <a href="/admin/analytics" className="block hover:text-primary">
             Analytics
           </a>
         </nav>

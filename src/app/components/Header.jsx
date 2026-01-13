@@ -1,4 +1,4 @@
-import { BRANDING } from "@/config/branding";
+import { BRANDING } from "../../config/branding";
 
 export default function Header() {
   return (
@@ -7,7 +7,6 @@ export default function Header() {
         <h1 className="text-2xl font-bold text-primary tracking-wide">
           {BRANDING.name}
         </h1>
-
         <p className="text-xs text-gray-400 mt-1 tracking-wide text-center">
           {BRANDING.slogan}
         </p>

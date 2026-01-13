@@ -1,3 +1,5 @@
+// src/app/components/Watermark.jsx
+
 import { BRANDING } from "../../config/branding";
 
 export default function Watermark({ role }) {

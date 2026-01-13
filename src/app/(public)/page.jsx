@@ -1,26 +1,24 @@
+import Header from "@/app/components/Header";
+
 export default function PublicHome() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-        PRstudy
-      </h1>
-      <p className="text-lg text-gray-300 max-w-xl mb-8">
-        Premium SaaS learning platform for exams, tests, and growth.
-      </p>
-      <div className="flex gap-4">
-        <a
-          href="/login"
-          className="px-6 py-3 rounded-lg bg-primary text-black font-semibold hover:opacity-90 transition"
-        >
-          Login
-        </a>
-        <a
-          href="/signup"
-          className="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition"
-        >
-          Sign Up
-        </a>
-      </div>
+    <main className="min-h-screen">
+      <Header glow="soft" />
+
+      <section className="flex flex-col items-center justify-center text-center mt-24">
+        <img
+          src="/brand/logo.svg"
+          alt="PRstudy"
+          className="h-28 w-auto neon-hero"
+        />
+        <p className="mt-4 brand-slogan text-lg">
+          भवत: लक्ष्यं भवत: जीवनम् अस्ति।
+        </p>
+      </section>
+
+      <footer className="mt-24 py-8 text-center text-sm opacity-70">
+        भवत: लक्ष्यं भवत: जीवनम् अस्ति।
+      </footer>
     </main>
   );
 }

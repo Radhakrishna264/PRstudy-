@@ -1,5 +1,11 @@
 export const BRANDING = {
   name: "PRstudy",
-  slogan: "भवत: लक्ष्यं भवत: जीवनम् अस्ति।",
-  owner: "Praveen Rajput"
+  slogan: "सफलता तक सफर, सीखने वाली पीढ़ी",
+  owner: "Praveen Rajput",
+
+  theme: {
+    primary: "#7c7cff",   // neon violet
+    accent: "#00ffd5",    // neon cyan
+    bg: "#0b0f1a"         // dark SaaS background
+  }
 };

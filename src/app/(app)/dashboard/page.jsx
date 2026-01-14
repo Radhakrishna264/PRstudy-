@@ -1,17 +1,20 @@
-import Header from "../../components/Header";
+import { branding } from "../../../config/branding";
+
+export const metadata = {
+  title: `Dashboard | ${branding.name}`,
+};
 
 export default function DashboardPage() {
   return (
-    <main className="min-h-screen">
-      {/* User Header */}
-      <Header glow="soft" />
+    <section>
+      <h1>Dashboard</h1>
+      <p>{branding.slogan}</p>
 
-      <section className="p-6">
-        <h1 className="text-2xl font-semibold mb-2">Dashboard</h1>
-        <p className="opacity-70">
-          Overview of your activity, tests, rewards, and progress.
-        </p>
-      </section>
-    </main>
+      <ul>
+        <li>Live tests & upcoming exams</li>
+        <li>Recent activity</li>
+        <li>Quick access shortcuts</li>
+      </ul>
+    </section>
   );
 }

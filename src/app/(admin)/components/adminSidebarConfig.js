@@ -1,78 +1,21 @@
-export const adminSidebarConfig = [
-  {
-    section: "Overview",
-    items: [
-      {
-        label: "Dashboard",
-        href: "/admin-dashboard",
-        icon: "dashboard",
-      },
-    ],
-  },
-
-  {
-    section: "Management",
-    items: [
-      {
-        label: "Users",
-        href: "/users",
-        icon: "users",
-      },
-      {
-        label: "Files Control",
-        href: "/files-control",
-        icon: "files",
-      },
-      {
-        label: "Tests Control",
-        href: "/tests-control",
-        icon: "tests",
-      },
-    ],
-  },
-
-  {
-    section: "Finance",
-    items: [
-      {
-        label: "Payments",
-        href: "/payments",
-        icon: "payments",
-      },
-    ],
-  },
-
-  {
-    section: "Insights",
-    items: [
-      {
-        label: "Analytics",
-        href: "/analytics",
-        icon: "analytics",
-      },
-    ],
-  },
-
-  {
-    section: "System",
-    superadminOnly: true,
-    items: [
-      {
-        label: "Capabilities",
-        href: "/_config/capabilities",
-      },
-      {
-        label: "Roles",
-        href: "/_config/roles",
-      },
-      {
-        label: "Feature Flags",
-        href: "/_flags",
-      },
-      {
-        label: "Audit Logs",
-        href: "/_config/audits",
-      },
-    ],
-  },
-];
+export const adminSidebarConfig = {
+  overview: [
+    { label: "Dashboard", path: "/admin-dashboard" },
+  ],
+  management: [
+    { label: "Users", path: "/admin/users" },
+    { label: "Files Control", path: "/admin/files-control" },
+    { label: "Tests Control", path: "/admin/tests-control" },
+  ],
+  finance: [
+    { label: "Payments", path: "/admin/payments" },
+  ],
+  insights: [
+    { label: "Analytics", path: "/admin/analytics" },
+  ],
+  system: [
+    { label: "Capabilities", path: "/admin/_config/capabilities" },
+    { label: "Roles", path: "/admin/_config/roles" },
+    { label: "Audit Logs", path: "/admin/_config/audits" },
+  ],
+};

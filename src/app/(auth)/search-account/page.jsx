@@ -1,27 +1,26 @@
-import Link from "next/link";
 import { branding } from "../../../config/branding";
 
 export const metadata = {
-  title: `Search Account | ${branding.name}`,
+  title: `${branding.name} | Search Account`,
 };
 
 export default function SearchAccountPage() {
   return (
-    <div className="auth-container">
-      <h1 className="auth-title">Search Your Account</h1>
+    <div className="auth-page">
+      <h1>Search Account</h1>
+
       <p className="auth-slogan">{branding.slogan}</p>
 
       <form className="auth-form">
         <input
           type="text"
-          placeholder="Enter Email / Mobile / PR-ID"
-          required
+          placeholder="Enter Email / Mobile to find your PR-ID"
         />
         <button type="submit">Search</button>
       </form>
 
       <div className="auth-links">
-        <Link href="/login">Back to Login</Link>
+        <a href="/login">Back to Login</a>
       </div>
     </div>
   );

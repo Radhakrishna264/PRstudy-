@@ -1,17 +1,20 @@
-import Link from "next/link";
+"use client";
 
-export default function Header({ glow = "soft" }) {
-  const glowClass = glow === "hero" ? "neon-hero" : "neon-soft";
+import branding from "../../config/branding";
 
+export default function Header() {
   return (
-    <header className="w-full px-6 py-4 flex items-center justify-between">
-      <Link href="/" className={`flex items-center gap-3 ${glowClass}`}>
-        <img src="/brand/logo.svg" alt="PRstudy" className="h-10 w-auto" />
-      </Link>
+    <header className="prstudy-header">
+      <div className="prstudy-header-inner">
+        <div className="brand">
+          <span className="brand-name">{branding.name}</span>
+          <span className="brand-tagline">{branding.tagline}</span>
+        </div>
 
-      <nav className="text-sm opacity-80">
-        {/* keep existing nav if any */}
-      </nav>
+        <div className="brand-slogan">
+          {branding.slogan.text}
+        </div>
+      </div>
     </header>
   );
 }

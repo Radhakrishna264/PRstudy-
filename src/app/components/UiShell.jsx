@@ -1,16 +1,20 @@
 import Header from "./Header";
+import Sidebar from "./Sidebar";
 import Footer from "./Footer";
-import Watermark from "./Watermark";
 
-export default function UIShell({ children, role }) {
+export default function UiShell({ children }) {
   return (
-    <>
+    <div className="ui-shell">
       <Header />
-      <main className="prstudy-main">
-        {children}
-      </main>
+
+      <div className="ui-body">
+        <Sidebar />
+        <main className="ui-content">
+          {children}
+        </main>
+      </div>
+
       <Footer />
-      <Watermark role={role} />
-    </>
+    </div>
   );
 }

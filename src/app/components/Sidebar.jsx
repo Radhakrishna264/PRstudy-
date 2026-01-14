@@ -1,14 +1,14 @@
-import branding from "../../config/branding";
-
 export default function Sidebar() {
   return (
-    <aside className="prstudy-sidebar">
-      <div className="sidebar-brand">
-        {branding.name}
-      </div>
-
-      <nav className="sidebar-nav">
-        {/* routes injected later */}
+    <aside className="sidebar">
+      <nav>
+        <ul>
+          <li>Dashboard</li>
+          <li>Tests</li>
+          <li>Files</li>
+          <li>Rewards</li>
+          <li>Profile</li>
+        </ul>
       </nav>
     </aside>
   );

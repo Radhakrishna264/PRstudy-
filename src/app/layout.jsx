@@ -1,17 +1,35 @@
 import "./globals.css";
-import Header from "./components/Header";
+
+/*
+  PRstudy – Root Layout (FINAL)
+  Covers:
+  - Public
+  - Auth
+  - App (User)
+  - Admin / SuperAdmin
+
+  NOTE:
+  - No auth logic here
+  - No redirects here
+  - Middleware handles access control
+*/
 
 export const metadata = {
   title: "PRstudy",
-  description: "Premium SaaS Learning Platform",
+  description: "PRstudy – Smart Learning & Test Platform",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Header />
         {children}
+
+        {/* Global watermark placeholder
+            Actual data injected by Watermark component (Phase-11) */}
+        <div className="prstudy-watermark">
+          PRstudy
+        </div>
       </body>
     </html>
   );

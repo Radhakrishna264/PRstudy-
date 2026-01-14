@@ -2,15 +2,16 @@
 module.exports = {
   content: [
     "./src/app/**/*.{js,jsx}",
-    "./src/components/**/*.{js,jsx}"
+    "./src/components/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}"
   ],
   theme: {
     extend: {
       colors: {
-        bg: "#0b0f1a",
-        fg: "#e6e9f2",
-        primary: "#7c7cff",
-        accent: "#22d3ee"
+        brand: {
+          DEFAULT: "#7c3aed",
+          dark: "#5b21b6"
+        }
       }
     }
   },

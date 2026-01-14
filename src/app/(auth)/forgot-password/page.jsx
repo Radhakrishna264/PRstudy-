@@ -1,23 +1,23 @@
-import Link from "next/link";
 import { branding } from "../../../config/branding";
 
 export const metadata = {
-  title: `Reset Password | ${branding.name}`,
+  title: `${branding.name} | Forgot Password`,
 };
 
 export default function ForgotPasswordPage() {
   return (
-    <div className="auth-container">
-      <h1 className="auth-title">Reset Password</h1>
+    <div className="auth-page">
+      <h1>Forgot Password</h1>
+
       <p className="auth-slogan">{branding.slogan}</p>
 
       <form className="auth-form">
-        <input type="text" placeholder="Email / Mobile / PR-ID" required />
-        <button type="submit">Send Reset Link</button>
+        <input type="text" placeholder="Email / Mobile / PR-ID" />
+        <button type="submit">Send Reset Link / OTP</button>
       </form>
 
       <div className="auth-links">
-        <Link href="/login">Back to Login</Link>
+        <a href="/login">Back to Login</a>
       </div>
     </div>
   );

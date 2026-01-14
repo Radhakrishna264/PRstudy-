@@ -1,23 +1,25 @@
-import { ROLES } from "../roles";
-import { PERMISSIONS } from "../permissions";
+// FINAL CAPABILITIES (Plan + Role based)
 
 export const CAPABILITIES = {
-  [ROLES.USER]: [],
-  [ROLES.ADMIN]: [
-    PERMISSIONS.VIEW_ADMIN,
-    PERMISSIONS.MANAGE_USERS,
-    PERMISSIONS.MANAGE_FILES,
-    PERMISSIONS.MANAGE_TESTS,
-    PERMISSIONS.VIEW_PAYMENTS,
-    PERMISSIONS.VIEW_ANALYTICS
-  ],
-  [ROLES.SUPERADMIN]: [
-    PERMISSIONS.VIEW_ADMIN,
-    PERMISSIONS.MANAGE_USERS,
-    PERMISSIONS.MANAGE_FILES,
-    PERMISSIONS.MANAGE_TESTS,
-    PERMISSIONS.VIEW_PAYMENTS,
-    PERMISSIONS.VIEW_ANALYTICS,
-    PERMISSIONS.SYSTEM_CONTROL
-  ]
+  FREE: {
+    testsPerDay: 1,
+    aiHelp: false,
+    downloads: false,
+  },
+
+  VIP: {
+    testsPerDay: 5,
+    aiHelp: true,
+    downloads: true,
+  },
+
+  PRO_VIP: {
+    testsPerDay: Infinity,
+    aiHelp: true,
+    downloads: true,
+  },
 };
+
+export function getCapabilities(plan) {
+  return CAPABILITIES[plan] || CAPABILITIES.FREE;
+}

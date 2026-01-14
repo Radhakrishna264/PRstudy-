@@ -1,22 +1,38 @@
 // src/app/(admin)/admin-dashboard/layout.jsx
+
 import { redirect } from "next/navigation";
 import { getSession } from "../../../lib/session";
+import Sidebar from "../../components/Sidebar";
+import Header from "../../components/Header";
+import Watermark from "../../components/Watermark";
 
 export default async function AdminDashboardLayout({ children }) {
   const session = await getSession();
 
-  // ❌ Not logged in
-  if (!session || !session.user) {
-    redirect("/auth/login");
+  if (!session) {
+    redirect("/login");
   }
 
-  // ❌ Logged in but not admin
-  if (
-    session.user.role !== "ADMIN" &&
-    session.user.role !== "SUPERADMIN"
-  ) {
+  const role = session.user?.role;
+
+  if (role !== "admin" && role !== "superadmin") {
     redirect("/dashboard");
   }
 
-  return <>{children}</>;
+  return (
+    <div className="min-h-screen flex bg-gray-50">
+      {/* Sidebar */}
+      <Sidebar role={role} />
+
+      {/* Main Area */}
+      <div className="flex-1 flex flex-col">
+        <Header />
+
+        <main className="flex-1 p-6 relative">
+          <Watermark role={role} />
+          {children}
+        </main>
+      </div>
+    </div>
+  );
 }

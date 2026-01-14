@@ -1,10 +1,18 @@
+import branding from "../../../config/branding";
+
 export default function AboutPage() {
   return (
-    <section className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-semibold mb-4">About PRstudy</h1>
-      <p className="text-gray-300">
-        PRstudy is a premium learning SaaS designed for serious students.
+    <section className="public-page">
+      <h1>About {branding.name}</h1>
+
+      <p>
+        {branding.name} is a smart learning and test platform designed
+        for focused, disciplined, and goal-oriented students.
       </p>
+
+      <blockquote className="public-slogan">
+        {branding.slogan.text}
+      </blockquote>
     </section>
   );
 }

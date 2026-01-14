@@ -6,14 +6,15 @@ export const metadata = {
 
 export default function TestsPage() {
   return (
-    <section>
+    <section className="app-page">
       <h1>Tests & Exams</h1>
-      <p>{branding.slogan}</p>
+      <p className="app-slogan">{branding.slogan}</p>
 
-      <ul>
-        <li>Live exams</li>
-        <li>Previous year tests</li>
-        <li>Practice tests</li>
+      <ul className="feature-list">
+        <li>📝 Exam-wise Practice Tests</li>
+        <li>⏱️ Weekly Competitive Tests</li>
+        <li>📊 Results & Analysis</li>
+        <li>🔒 Anti-cheat Protected Attempts</li>
       </ul>
     </section>
   );

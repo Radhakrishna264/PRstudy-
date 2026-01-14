@@ -1,22 +1,28 @@
-import Header from "../../components/Header";
+import Link from "next/link";
+import { branding } from "../../../config/branding";
+
+export const metadata = {
+  title: `Sign Up | ${branding.name}`,
+};
 
 export default function SignupPage() {
   return (
-    <main className="min-h-screen flex flex-col">
-      <Header glow="soft" />
+    <div className="auth-container">
+      <h1 className="auth-title">Create Account</h1>
+      <p className="auth-slogan">{branding.slogan}</p>
 
-      <section className="flex flex-1 items-center justify-center">
-        <div className="w-full max-w-md p-6">
-          <h1 className="text-2xl font-semibold mb-2">Create Account</h1>
-          <p className="text-sm opacity-70 mb-6">
-            भवत: लक्ष्यं भवत: जीवनम् अस्ति।
-          </p>
+      <form className="auth-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" />
+        <input type="tel" placeholder="Mobile Number" />
+        <input type="password" placeholder="Password" required />
 
-          <div className="border rounded p-4 opacity-60">
-            Signup form placeholder
-          </div>
-        </div>
-      </section>
-    </main>
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <div className="auth-links">
+        <Link href="/login">Already have an account? Login</Link>
+      </div>
+    </div>
   );
 }

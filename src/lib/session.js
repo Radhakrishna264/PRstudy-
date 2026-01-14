@@ -1,17 +1,27 @@
-// src/lib/session.js
-import { AUTH_MODE } from "@/config/app/auth";
+// FINAL SESSION HANDLER – Phase-11
 
-export async function getSession() {
-  // STEP-2.4: Bootstrap auth (temporary)
-  if (AUTH_MODE === "bootstrap") {
-    return {
-      user: {
-        role: "superadmin",
-        name: "Praveen Rajput",
-      },
-    };
+import { isValidRole } from "./roles/index";
+
+export function getSession(request) {
+  const session = request?.session || null;
+
+  if (!session) return null;
+
+  if (!isValidRole(session.role)) {
+    throw new Error("Invalid role in session");
   }
 
-  // REAL AUTH MODE (Phase-10)
-  return null;
+  return {
+    userId: session.userId,
+    role: session.role,
+    plan: session.plan,
+    loggedInAt: session.loggedInAt,
+  };
+}
+
+export function requireSession(session) {
+  if (!session) {
+    throw new Error("Authentication required");
+  }
+  return session;
 }

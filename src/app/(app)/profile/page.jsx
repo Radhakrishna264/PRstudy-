@@ -1,10 +1,16 @@
+import { branding } from "../../../config/branding";
+
+export const metadata = {
+  title: `Profile | ${branding.name}`,
+};
+
 export default function ProfilePage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Profile</h1>
-      <p className="text-gray-400">
-        Manage your account, subscription, and preferences.
-      </p>
-    </div>
+    <section>
+      <h1>My Profile</h1>
+      <p>{branding.slogan}</p>
+
+      <p>User details, plan, history, settings.</p>
+    </section>
   );
 }

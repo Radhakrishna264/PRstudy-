@@ -6,11 +6,16 @@ export const metadata = {
 
 export default function ProfilePage() {
   return (
-    <section>
-      <h1>My Profile</h1>
-      <p>{branding.slogan}</p>
+    <section className="app-page">
+      <h1>Your Profile</h1>
+      <p className="app-slogan">{branding.slogan}</p>
 
-      <p>User details, plan, history, settings.</p>
+      <ul className="feature-list">
+        <li>👤 Account Information</li>
+        <li>📜 Activity History</li>
+        <li>💳 Plan & Subscription</li>
+        <li>⚙️ Settings & Security</li>
+      </ul>
     </section>
   );
 }

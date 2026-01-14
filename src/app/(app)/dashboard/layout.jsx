@@ -1,14 +1,37 @@
-// src/app/(app)/dashboard/layout.jsx
-import { redirect } from "next/navigation";
-import { getSession } from "../../../lib/session";
+import { branding } from "../../../config/branding";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
+import Footer from "../../components/Footer";
 
-export default async function DashboardLayout({ children }) {
-  const session = await getSession();
+export const metadata = {
+  title: `Dashboard | ${branding.name}`,
+  description: branding.tagline,
+};
 
-  // ❌ Not logged in → login
-  if (!session || !session.user) {
-    redirect("/auth/login");
-  }
+export default function DashboardLayout({ children }) {
+  return (
+    <div className="dashboard-shell">
+      {/* Top Header */}
+      <Header />
 
-  return <>{children}</>;
+      {/* Body */}
+      <div className="dashboard-body">
+        {/* Left Sidebar */}
+        <Sidebar />
+
+        {/* Main Content */}
+        <main className="dashboard-content">
+          {/* Global Sanskrit Slogan (Brand Rule) */}
+          <div className="brand-slogan">
+            {branding.slogan}
+          </div>
+
+          {children}
+        </main>
+      </div>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
 }

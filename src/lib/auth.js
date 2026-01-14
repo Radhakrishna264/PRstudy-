@@ -1,14 +1,40 @@
-// src/lib/auth.js
+// FINAL AUTH CORE – Phase-11 READY
 
-export function generatePRUserId() {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  let id = "PR";
-  for (let i = 0; i < 4; i++) {
-    id += chars.charAt(Math.floor(Math.random() * chars.length));
+import { ROLES } from "./roles/index";
+import { hasPermission } from "./permissions/index";
+import { getCapabilities } from "./capabilities/index";
+
+export function authorize({
+  session,
+  requiredPermission,
+}) {
+  if (!session) {
+    return { allowed: false, reason: "NO_SESSION" };
   }
-  return id; // example: PR8F2A
+
+  if (!hasPermission(session.role, requiredPermission)) {
+    return { allowed: false, reason: "NO_PERMISSION" };
+  }
+
+  return { allowed: true };
 }
 
-export function getUserRole(user) {
-  return user?.role === "admin" ? "admin" : "user";
+export function bootstrapSuperAdmin() {
+  return {
+    userId: "PR-SUPERADMIN",
+    role: ROLES.SUPERADMIN,
+    plan: "PRO_VIP",
+    loggedInAt: Date.now(),
+  };
+}
+
+export function resolveUserContext(session) {
+  const capabilities = getCapabilities(session.plan);
+
+  return {
+    userId: session.userId,
+    role: session.role,
+    plan: session.plan,
+    capabilities,
+  };
 }

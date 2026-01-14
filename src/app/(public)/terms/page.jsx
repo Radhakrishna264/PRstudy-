@@ -1,10 +1,18 @@
+import branding from "../../../config/branding";
+
 export default function TermsPage() {
   return (
-    <section className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-semibold mb-4">Terms & Conditions</h1>
-      <p className="text-gray-300">
-        By using PRstudy, you agree to our terms.
+    <section className="public-page">
+      <h1>Terms & Conditions</h1>
+
+      <p>
+        By using {branding.name}, users agree to follow platform rules,
+        discipline, and ethical usage policies.
       </p>
+
+      <blockquote className="public-slogan">
+        {branding.slogan.text}
+      </blockquote>
     </section>
   );
 }

@@ -1,9 +1,29 @@
+// FINAL PERMISSIONS MATRIX
+
 export const PERMISSIONS = {
-  VIEW_ADMIN: "view_admin",
-  MANAGE_USERS: "manage_users",
-  MANAGE_FILES: "manage_files",
-  MANAGE_TESTS: "manage_tests",
-  VIEW_PAYMENTS: "view_payments",
-  VIEW_ANALYTICS: "view_analytics",
-  SYSTEM_CONTROL: "system_control"
+  USER: [
+    "VIEW_CONTENT",
+    "ATTEMPT_TEST",
+    "EDIT_PROFILE",
+    "SEND_DM",
+  ],
+
+  ADMIN: [
+    "VIEW_CONTENT",
+    "ATTEMPT_TEST",
+    "EDIT_PROFILE",
+    "SEND_DM",
+    "MANAGE_USERS",
+    "MANAGE_TESTS",
+    "VIEW_REPORTS",
+  ],
+
+  SUPERADMIN: [
+    "*", // ABSOLUTE POWER
+  ],
 };
+
+export function hasPermission(role, permission) {
+  if (role === "SUPERADMIN") return true;
+  return PERMISSIONS[role]?.includes(permission);
+}

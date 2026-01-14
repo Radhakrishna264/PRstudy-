@@ -1,10 +1,16 @@
+import { branding } from "../../../config/branding";
+
+export const metadata = {
+  title: `Rewards | ${branding.name}`,
+};
+
 export default function RewardsPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Rewards</h1>
-      <p className="text-gray-400">
-        Points, badges, streaks, and VIP rewards earned through activity.
-      </p>
-    </div>
+    <section>
+      <h1>Rewards & Points</h1>
+      <p>{branding.slogan}</p>
+
+      <p>Points, badges, streaks, VIP benefits.</p>
+    </section>
   );
 }

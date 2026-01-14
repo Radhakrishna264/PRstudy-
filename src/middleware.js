@@ -2,12 +2,13 @@ import { NextResponse } from "next/server";
 import { getSession } from "./lib/session";
 
 /*
-  PRstudy – Global Middleware
-  Covers:
-  - Public routes
-  - Auth routes
-  - User app routes
-  - Admin & Superadmin routes
+ PRstudy – Global Middleware (FINAL)
+
+ Covers:
+ - Public routes
+ - Auth routes
+ - User app routes
+ - Admin & SuperAdmin routes
 */
 
 const PUBLIC_ROUTES = [
@@ -15,14 +16,14 @@ const PUBLIC_ROUTES = [
   "/about",
   "/contact",
   "/privacy",
-  "/terms"
+  "/terms",
 ];
 
 const AUTH_ROUTES = [
   "/login",
   "/signup",
   "/forgot-password",
-  "/search-account"
+  "/search-account",
 ];
 
 const USER_APP_PREFIX = "/dashboard";
@@ -31,7 +32,7 @@ const ADMIN_PREFIX = "/admin-dashboard";
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  // Ignore Next internals & static files
+  // Ignore next internals, static files, api
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
@@ -40,21 +41,19 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // Public routes → always allowed
-  if (PUBLIC_ROUTES.includes(pathname)) {
+  // Public routes (including nested)
+  if (PUBLIC_ROUTES.some(route => pathname === route || pathname.startsWith(route + "/"))) {
     return NextResponse.next();
   }
 
   // Read session (server authoritative)
   const session = await getSession(request);
-
   const isLoggedIn = !!session;
-  const role = session?.role || null; // user | admin | superadmin
+  const role = session?.role || null; // USER | ADMIN | SUPERADMIN
 
-  // Auth pages
-  if (AUTH_ROUTES.includes(pathname)) {
+  // Auth routes
+  if (AUTH_ROUTES.some(route => pathname === route || pathname.startsWith(route + "/"))) {
     if (isLoggedIn) {
-      // Logged-in users never go back to auth pages
       return NextResponse.redirect(
         new URL(USER_APP_PREFIX, request.url)
       );
@@ -62,7 +61,7 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // App routes (user area)
+  // User app routes
   if (pathname.startsWith(USER_APP_PREFIX)) {
     if (!isLoggedIn) {
       return NextResponse.redirect(
@@ -72,7 +71,7 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // Admin / Superadmin routes
+  // Admin / SuperAdmin routes
   if (pathname.startsWith(ADMIN_PREFIX)) {
     if (!isLoggedIn) {
       return NextResponse.redirect(
@@ -80,8 +79,8 @@ export async function middleware(request) {
       );
     }
 
-    // Only admin or superadmin allowed
-    if (role !== "admin" && role !== "superadmin") {
+    // Only ADMIN or SUPERADMIN allowed
+    if (role !== "ADMIN" && role !== "SUPERADMIN") {
       return NextResponse.redirect(
         new URL(USER_APP_PREFIX, request.url)
       );
@@ -90,9 +89,7 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // Fallback:
-  // If route is unknown but user is logged in → allow
-  // Else → send to login
+  // Fallback
   if (!isLoggedIn) {
     return NextResponse.redirect(
       new URL("/login", request.url)
@@ -102,13 +99,9 @@ export async function middleware(request) {
   return NextResponse.next();
 }
 
-/*
-  Matcher:
-  - Middleware runs on all app routes
-  - Excludes static assets & API
-*/
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico).*)"
-  ]
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+  ],
+};  ]
 };

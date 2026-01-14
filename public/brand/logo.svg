@@ -1,11 +1,36 @@
-<!-- public/brand/logo.svg -->
-<svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
-  <rect width="260" height="64" rx="12" fill="black"/>
-  <text x="20" y="42"
-        font-size="32"
-        font-family="Arial, Helvetica, sans-serif"
-        fill="white"
-        font-weight="700">
-    PR<span fill="#00ffff">study</span>
+<svg width="460" height="90" viewBox="0 0 460 90" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prNeon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5FF"/>
+      <stop offset="100%" stop-color="#00FFB2"/>
+    </linearGradient>
+
+    <linearGradient id="studyNeon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B388FF"/>
+      <stop offset="100%" stop-color="#7C4DFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- PR -->
+  <text x="20" y="60"
+        font-size="50"
+        font-weight="900"
+        letter-spacing="2"
+        font-family="Inter, Poppins, Segoe UI, sans-serif"
+        fill="url(#prNeon)">
+    PR
   </text>
+
+  <!-- STUDY -->
+  <text x="120" y="60"
+        font-size="42"
+        font-weight="600"
+        letter-spacing="1"
+        font-family="Inter, Poppins, Segoe UI, sans-serif"
+        fill="url(#studyNeon)">
+    STUDY
+  </text>
+
+  <!-- subtle underline -->
+  <rect x="120" y="68" width="190" height="2" rx="1" fill="url(#studyNeon)"/>
 </svg>

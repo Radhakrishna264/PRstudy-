@@ -1,10 +1,18 @@
+import branding from "../../../config/branding";
+
 export default function ContactPage() {
   return (
-    <section className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-semibold mb-4">Contact</h1>
-      <p className="text-gray-300">
-        Reach us for support, feedback, or collaboration.
+    <section className="public-page">
+      <h1>Contact Us</h1>
+
+      <p>
+        For support and official communication related to {branding.name},
+        please use authorized channels only.
       </p>
+
+      <blockquote className="public-slogan">
+        {branding.slogan.text}
+      </blockquote>
     </section>
   );
 }

@@ -6,11 +6,16 @@ export const metadata = {
 
 export default function FilesPage() {
   return (
-    <section>
-      <h1>Files Hub</h1>
-      <p>{branding.slogan}</p>
+    <section className="app-page">
+      <h1>Files & Resources</h1>
+      <p className="app-slogan">{branding.slogan}</p>
 
-      <p>Notes, PDFs, practice material, downloads.</p>
+      <ul className="feature-list">
+        <li>📂 Notes & PDFs</li>
+        <li>⬇️ Downloads</li>
+        <li>⭐ Saved Resources</li>
+        <li>🔐 VIP-only Files</li>
+      </ul>
     </section>
   );
 }

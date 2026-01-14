@@ -1,11 +1,31 @@
-export const BRANDING = {
+// src/config/branding/index.js
+
+const BRANDING = {
   name: "PRstudy",
-  slogan: "सफलता तक सफर, सीखने वाली पीढ़ी",
+  legalName: "PRstudy Learning Platform",
   owner: "Praveen Rajput",
 
+  logo: {
+    primary: "/brand/logo.svg",
+    icon: "/brand/icon-neon.svg",
+  },
+
   theme: {
-    primary: "#7c7cff",   // neon violet
-    accent: "#00ffd5",    // neon cyan
-    bg: "#0b0f1a"         // dark SaaS background
-  }
+    primaryColor: "#7C3AED", // violet
+    accentColor: "#22D3EE",  // cyan
+    darkModeDefault: true,
+  },
+
+  watermark: {
+    enabled: true,
+    text: "PRstudy",
+    dynamic: true, // userId + timestamp injected later
+  },
+
+  contact: {
+    email: "support@prstudy.in",
+    website: "https://prstudy.in",
+  },
 };
+
+export default BRANDING;

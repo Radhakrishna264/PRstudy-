@@ -1,21 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7C7CFF"/>
-      <stop offset="100%" stop-color="#00E5FF"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  <text x="10" y="80" font-size="72" font-weight="800" fill="url(#g1)" filter="url(#glow)">
-    PR
-  </text>
-  <text x="140" y="80" font-size="56" font-weight="600" fill="#00E5FF" filter="url(#glow)">
-    study
+<!-- public/brand/logo.svg -->
+<svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="260" height="64" rx="12" fill="black"/>
+  <text x="20" y="42"
+        font-size="32"
+        font-family="Arial, Helvetica, sans-serif"
+        fill="white"
+        font-weight="700">
+    PR<span fill="#00ffff">study</span>
   </text>
 </svg>

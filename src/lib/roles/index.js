@@ -1,11 +1,11 @@
+// FINAL ROLE DEFINITIONS
+
 export const ROLES = {
-  USER: "user",
-  ADMIN: "admin",
-  SUPERADMIN: "superadmin"
+  USER: "USER",
+  ADMIN: "ADMIN",
+  SUPERADMIN: "SUPERADMIN",
 };
 
-export const ROLE_ORDER = [ROLES.USER, ROLES.ADMIN, ROLES.SUPERADMIN];
-
-export function isAtLeast(role, required) {
-  return ROLE_ORDER.indexOf(role) >= ROLE_ORDER.indexOf(required);
+export function isValidRole(role) {
+  return Object.values(ROLES).includes(role);
 }

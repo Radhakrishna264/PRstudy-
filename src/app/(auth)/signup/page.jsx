@@ -1,27 +1,26 @@
-import Link from "next/link";
 import { branding } from "../../../config/branding";
 
 export const metadata = {
-  title: `Sign Up | ${branding.name}`,
+  title: `${branding.name} | Sign Up`,
 };
 
 export default function SignupPage() {
   return (
-    <div className="auth-container">
-      <h1 className="auth-title">Create Account</h1>
+    <div className="auth-page">
+      <h1>Create Account</h1>
+
       <p className="auth-slogan">{branding.slogan}</p>
 
       <form className="auth-form">
-        <input type="text" placeholder="Full Name" required />
+        <input type="text" placeholder="Full Name" />
         <input type="email" placeholder="Email" />
         <input type="tel" placeholder="Mobile Number" />
-        <input type="password" placeholder="Password" required />
-
+        <input type="password" placeholder="Create Password" />
         <button type="submit">Sign Up</button>
       </form>
 
       <div className="auth-links">
-        <Link href="/login">Already have an account? Login</Link>
+        <a href="/login">Already have an account? Login</a>
       </div>
     </div>
   );

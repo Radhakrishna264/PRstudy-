@@ -6,11 +6,16 @@ export const metadata = {
 
 export default function ChatPage() {
   return (
-    <section>
-      <h1>Community Chat</h1>
-      <p>{branding.slogan}</p>
+    <section className="app-page">
+      <h1>Community & Chat</h1>
+      <p className="app-slogan">{branding.slogan}</p>
 
-      <p>Public discussion, doubts, announcements.</p>
+      <ul className="feature-list">
+        <li>💬 Public Discussions</li>
+        <li>👥 Topic-based Communities</li>
+        <li>🚫 Explicit-content Protection</li>
+        <li>🛡️ Admin Moderation System</li>
+      </ul>
     </section>
   );
 }

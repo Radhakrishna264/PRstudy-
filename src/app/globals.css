@@ -388,3 +388,16 @@ img {
 .prstudy-watermark img {
   opacity: 0.35;
 }
+/* ======================================================
+   PRstudy – NEON THEME ACTIVATION (v1 + v2 LOCKED)
+   ====================================================== */
+
+.theme-neon {
+  --color-bg: #020617;          /* deep dark */
+  --color-text: #e5e7eb;
+
+  --color-primary: #7c3aed;     /* neon violet */
+  --color-accent: #22d3ee;      /* neon cyan */
+
+  --color-border: rgba(255,255,255,0.08);
+}

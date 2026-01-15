@@ -279,3 +279,25 @@ img {
     grid-template-columns: 1fr;
   }
 }
+/* ---------------------------------------------------------
+   Public Layout Wrappers (REQUIRED)
+   --------------------------------------------------------- */
+
+.public-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.public-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Public page container */
+.public-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem;
+}

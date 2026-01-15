@@ -9,7 +9,7 @@ export default function SearchAccountPage() {
     <div className="auth-page">
       <h1>Search Account</h1>
 
-      <p className="auth-slogan">{branding.slogan}</p>
+      <p className="auth-slogan">{branding.slogan.text}</p>
 
       <form className="auth-form">
         <input

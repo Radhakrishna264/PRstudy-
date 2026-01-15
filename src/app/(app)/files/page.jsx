@@ -8,7 +8,7 @@ export default function FilesPage() {
   return (
     <section className="app-page">
       <h1>Files & Resources</h1>
-      <p className="app-slogan">{branding.slogan}</p>
+      <p className="app-slogan">{branding.slogan.text}</p>
 
       <ul className="feature-list">
         <li>📂 Notes & PDFs</li>

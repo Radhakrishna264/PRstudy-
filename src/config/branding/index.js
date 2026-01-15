@@ -45,4 +45,5 @@ const branding = {
   }
 };
 
+export { branding };
 export default branding;

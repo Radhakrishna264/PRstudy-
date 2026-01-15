@@ -23,7 +23,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        {children}
+        {/* Root wrapper for global layout & spacing */}
+        <div className="app-root">
+          {children}
+        </div>
       </body>
     </html>
   );

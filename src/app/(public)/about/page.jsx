@@ -9,7 +9,7 @@ export default function AboutPage() {
     <section className="public-page">
       <h1>About {branding.name}</h1>
 
-      <p className="public-slogan">{branding.slogan}</p>
+      <p className="public-slogan">{branding.slogan.text}</p>
 
       <p>
         {branding.name} is a smart learning and test platform designed to help

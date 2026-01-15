@@ -1,18 +1,7 @@
 import "./globals.css";
-
-/*
- PRstudy – Root Layout (FINAL)
- Covers:
- - Public
- - Auth
- - App (User)
- - Admin / SuperAdmin
-
- NOTE:
- - NO UiShell here
- - NO auth logic here
- - Middleware handles access
-*/
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Watermark from "./components/Watermark";
 
 export const metadata = {
   title: "PRstudy",
@@ -23,9 +12,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        {/* Root wrapper for global layout & spacing */}
-        <div className="app-root">
-          {children}
+        <div className="public-shell">
+          <Header />
+
+          <main className="public-content">
+            {children}
+          </main>
+
+          <Footer />
+          <Watermark />
         </div>
       </body>
     </html>

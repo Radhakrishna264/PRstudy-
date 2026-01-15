@@ -9,7 +9,7 @@ export default function PrivacyPage() {
     <section className="public-page">
       <h1>Privacy Policy</h1>
 
-      <p className="public-slogan">{branding.slogan}</p>
+      <p className="public-slogan">{branding.slogan.text}</p>
 
       <p>
         {branding.name} respects your privacy and follows a strict

@@ -1,13 +1,12 @@
-import branding from "../../config/branding";
-
-export default function Watermark({ role = "USER" }) {
+export default function Watermark() {
   return (
-    <div
-      className="prstudy-watermark"
-      data-role={role}
-    >
-      <span className="wm-brand">{branding.name}</span>
-      <span className="wm-slogan">{branding.slogan.text}</span>
+    <div className="prstudy-watermark">
+      <img
+        src="/brand/icon-neon.svg"
+        alt="PRstudy"
+        width="14"
+        height="14"
+      />
     </div>
   );
 }

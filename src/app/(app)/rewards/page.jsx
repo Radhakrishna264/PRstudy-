@@ -8,7 +8,7 @@ export default function RewardsPage() {
   return (
     <section className="app-page">
       <h1>Rewards & Achievements</h1>
-      <p className="app-slogan">{branding.slogan}</p>
+      <p className="app-slogan">{branding.slogan.text}</p>
 
       <ul className="feature-list">
         <li>🎯 Points & XP System</li>

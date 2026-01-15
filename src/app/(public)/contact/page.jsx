@@ -9,7 +9,7 @@ export default function ContactPage() {
     <section className="public-page">
       <h1>Contact Us</h1>
 
-      <p className="public-slogan">{branding.slogan}</p>
+      <p className="public-slogan">{branding.slogan.text}</p>
 
       <p>
         For support, feedback, or official communication, please reach out

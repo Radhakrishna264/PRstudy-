@@ -44,7 +44,7 @@ export default function AppLayout({ children }) {
         <main className="app-content">
           {/* Global Sanskrit Slogan */}
           <p className="app-slogan">
-            {branding.slogan}
+            {branding.slogan.text}
           </p>
 
           {/* Route Content */}

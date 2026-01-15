@@ -6,6 +6,12 @@ import Watermark from "./components/Watermark";
 export const metadata = {
   title: "PRstudy",
   description: "PRstudy - Smart Learning & Test Platform",
+
+  icons: {
+    icon: "/brand/icon-neon.svg",
+    shortcut: "/brand/icon-neon.svg",
+    apple: "/brand/icon-neon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

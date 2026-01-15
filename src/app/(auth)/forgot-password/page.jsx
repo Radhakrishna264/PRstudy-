@@ -9,7 +9,7 @@ export default function ForgotPasswordPage() {
     <div className="auth-page">
       <h1>Forgot Password</h1>
 
-      <p className="auth-slogan">{branding.slogan}</p>
+      <p className="auth-slogan">{branding.slogan.text}</p>
 
       <form className="auth-form">
         <input type="text" placeholder="Email / Mobile / PR-ID" />

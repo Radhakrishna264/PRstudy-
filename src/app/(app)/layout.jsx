@@ -6,21 +6,18 @@ import Footer from "../components/Footer";
 import Watermark from "../components/Watermark";
 
 /*
- PRstudy — App Layout (FINAL)
-
+ PRstudy – App Layout (FINAL)
  Covers:
  - User App Area
  - Dashboard
  - Files
  - Tests
- - Chat
  - Rewards
  - Profile
 
  IMPORTANT:
  - No auth logic here
  - No role checks here
- - No redirects here
  - Middleware controls access
 */
 
@@ -40,7 +37,7 @@ export default function AppLayout({ children }) {
         {/* Left Sidebar */}
         <Sidebar />
 
-        {/* Main Content Area */}
+        {/* Main Content */}
         <main className="app-content">
           {/* Global Sanskrit Slogan */}
           <p className="app-slogan">

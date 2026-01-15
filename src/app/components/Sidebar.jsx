@@ -1,4 +1,4 @@
-export default function Sidebar() {
+export default function Sidebar({ role }) {
   return (
     <aside className="sidebar">
       <nav>
@@ -8,6 +8,8 @@ export default function Sidebar() {
           <li>Files</li>
           <li>Rewards</li>
           <li>Profile</li>
+
+          {role === "superadmin" && <li>Admin Panel</li>}
         </ul>
       </nav>
     </aside>

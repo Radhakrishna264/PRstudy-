@@ -10,7 +10,7 @@ export default function DashboardPage() {
       <h1>Welcome to {branding.name}</h1>
 
       <p className="dashboard-slogan">
-        {branding.slogan}
+        {branding.slogan.text}
       </p>
 
       <div className="dashboard-grid">

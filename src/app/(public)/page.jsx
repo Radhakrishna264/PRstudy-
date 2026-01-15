@@ -14,7 +14,7 @@ export default function PublicHomePage() {
         <h1 className="public-title">{branding.name}</h1>
 
         <p className="public-slogan">
-          {branding.slogan}
+          {branding.slogan.text}
         </p>
 
         <p className="public-description">

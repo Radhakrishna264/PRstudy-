@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="public-shell">
+        <div className="app-root public-shell">
           <Header />
 
           <main className="public-content">

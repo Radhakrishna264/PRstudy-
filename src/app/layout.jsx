@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="theme-neon" suppressHydrationWarning>
       <body>
         <div className="app-root public-shell">
           <Header />

@@ -1,6 +1,6 @@
 "use client";
 
-import branding from "../config/branding";
+import branding from "../../config/branding";
 
 export default function Header() {
   return (

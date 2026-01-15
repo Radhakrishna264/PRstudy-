@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }) {
         <main className="dashboard-content">
           {/* Global Sanskrit Slogan (Brand Rule) */}
           <div className="brand-slogan">
-            {branding.slogan}
+            {branding.slogan.text}
           </div>
 
           {children}

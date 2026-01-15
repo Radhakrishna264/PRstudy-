@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function PublicHomePage() {
   return (
-    <div className="container">
+    <div className="public-content">
 
       {/* Hero Section */}
       <section className="section">

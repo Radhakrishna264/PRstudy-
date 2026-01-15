@@ -9,7 +9,7 @@ export default function TermsPage() {
     <section className="public-page">
       <h1>Terms & Conditions</h1>
 
-      <p className="public-slogan">{branding.slogan}</p>
+      <p className="public-slogan">{branding.slogan.text}</p>
 
       <p>
         By accessing or using {branding.name}, you agree to follow these terms.

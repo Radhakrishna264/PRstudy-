@@ -8,7 +8,7 @@ export default function ProfilePage() {
   return (
     <section className="app-page">
       <h1>Your Profile</h1>
-      <p className="app-slogan">{branding.slogan}</p>
+      <p className="app-slogan">{branding.slogan.text}</p>
 
       <ul className="feature-list">
         <li>👤 Account Information</li>
